@@ -10,6 +10,8 @@ services:
     environment:
       - NODE_ENV=test
       - NPM_TOKEN
+      - ATRIX_ORIENTDB_DATASOURCE_M1_CONFIG_SERVER_HOST=orient
+      - I_WANT_TEST_LOGGING=1
     networks:
       - atrix-orientdb_test
     depends_on:
@@ -17,6 +19,8 @@ services:
 
   orient:
     image: orientdb
+    environment:
+      - ORIENTDB_ROOT_PASSWORD=password
     networks:
       - atrix-orientdb_test
 
