@@ -1,0 +1,23 @@
+{
+  "name": "@trigo/atrix-orientdb",
+  "version": "0.0.0",
+  "description": "plugig for the atrix microservice framework to intigrate OrientDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trigo-at/atrix-orientdb.git"
+  },
+  "keywords": [
+    "atrix",
+    "orientdb"
+  ],
+  "author": "Christian Hubinger <christian@trigo.at>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trigo-at/atrix-orientdb/issues"
+  },
+  "homepage": "https://github.com/trigo-at/atrix-orientdb#readme"
+}

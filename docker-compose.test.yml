@@ -1,0 +1,25 @@
+version: '2'
+services:
+  atrix-orientdb:
+    build:
+      context: .
+      args:
+        - NPM_TOKEN=${NPM_TOKEN}
+    image: trigo/atrix-oriendb:latest
+    command: 'yarn run test'
+    environment:
+      - NODE_ENV=test
+      - NPM_TOKEN
+    networks:
+      - atrix-orientdb_test
+    depends_on:
+      - orient
+
+  orient:
+    image: orientdb
+    networks:
+      - atrix-orientdb_test
+
+networks:
+  atrix-orientdb_test:
+    driver: bridge
