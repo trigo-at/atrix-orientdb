@@ -1,6 +1,6 @@
 {
   "name": "@trigo/atrix-orientdb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "plugig for the atrix microservice framework to intigrate OrientDB",
   "main": "index.js",
   "scripts": {
