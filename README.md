@@ -10,9 +10,9 @@ Plugin for the atrix mircoservice framework to setup OrientDB connections
 ## Features
 
 * Connection setup (server & database)
-* Connection test on startup
-* Create database on startup 
-* Run Migrations on startup
+* Tests connection on startup
+* Can create database on startup 
+* Can run migrations on startup
 
 ## Installation
 ```bash
@@ -56,18 +56,18 @@ const svc = new atrix.Service('orientdb', {
 	dataSource: {
 		// name of the connection
 		//
-		// after service startup access OrientJS Database object instance throght property:
-		//    atrix.services.orientdb.dataConnections.m1.db -> (OrientJS Database instance)
-		// get an instace of the Server class throgth
-		//    atrix.services.orientdb.dataConnections.m1.getServer() -> (OrientJS Server instance)
-		// NoteL: call .close() after usage to free resources on the server!
+		// after service startup access OrientJS Database object instance using property:
+		//    const db = atrix.services.orientdb.dataConnections.m1.db -> (OrientJS Database instance)
+		// to get an instace of the Server class use:
+		//    const server = atrix.services.orientdb.dataConnections.m1.getServer() -> (OrientJS Server instance)
+		// NoteL: call server.close() after usage to free resources on the server!
 		m1: {
 			// type of the db eg. plugin selection
 			type: 'orientdb',
 			config: {
 				// server location & credentials
  				server: {
-					// hostname where OrientDB runs
+					// host where OrientDB runs
 					host: '127.0.0.1',
 					
 					// port on which OrientDB is listening
@@ -100,12 +100,16 @@ const svc = new atrix.Service('orientdb', {
 					// wheter to run migrations on startup
 					runOnStartup: true,
 				},
-				// wheter to create the database ons tartup when it does not already exit
+				// wheter to create the database on startup when it does not exit
 				createDb: true,
 			},
 		},
 	},
 });
+
+// register service with atrix
 atrix.addService(svc);
+
+// start the service
 svc.start();
 ```
