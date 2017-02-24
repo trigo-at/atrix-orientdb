@@ -1,10 +1,13 @@
 {
   "name": "@trigo/atrix-orientdb",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=7.6.0"
+  },
   "description": "plugig for the atrix microservice framework to intigrate OrientDB",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 30000 --harmony-async-await $(find . -name '*.specs.js' -not -path './node_modules/*')",
+    "test": "NODE_ENV=test mocha --timeout 30000 $(find . -name '*.specs.js' -not -path './node_modules/*')",
     "lint": "eslint lib specs",
     "yarn": "yarn install"
   },
