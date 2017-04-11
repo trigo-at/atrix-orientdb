@@ -58,6 +58,37 @@ describe('loads datasources into service', () => {
 			const Test2 = await db.class.get('Test2');
 			expect(Test2).to.exist;
 		});
+
+		it('can run migrations manually', async () => {
+			await atrix.services.orientdb4.start();
+			const db = atrix.services.orientdb4.dataConnections.m1.db;
+			await atrix.services.orientdb4.dataConnections.m1.migrateUp();
+			const Test = await db.class.get('Test');
+			expect(Test).to.exist;
+		});
+	});
+
+	describe('can clear complete database', () => {
+		it('clears all', async () => {
+			await atrix.services.orientdb5.start();
+			const db = atrix.services.orientdb5.dataConnections.m1.db;
+			await db.class.create('TestSub', 'Test');
+			await atrix.services.orientdb5.dataConnections.m1.resetDb();
+			const list = await db.class.list(true);
+			for (const c of list) {
+				expect(c.name).not.to.equal('Test');
+				expect(c.name).not.to.equal('Test2');
+			}
+		});
+
+		it('can clear & migrateUp', async () => {
+			await atrix.services.orientdb6.start();
+			const db = atrix.services.orientdb6.dataConnections.m1.db;
+			await atrix.services.orientdb6.dataConnections.m1.resetDb();
+			await atrix.services.orientdb6.dataConnections.m1.migrateUp();
+			const Test = await db.class.get('Test');
+			expect(Test).to.exist;
+		});
 	});
 });
 

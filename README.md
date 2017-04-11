@@ -60,7 +60,12 @@ const svc = new atrix.Service('orientdb', {
 		//    const db = atrix.services.orientdb.dataConnections.m1.db -> (OrientJS Database instance)
 		// to get an instace of the Server class use:
 		//    const server = atrix.services.orientdb.dataConnections.m1.getServer() -> (OrientJS Server instance)
-		// NoteL: call server.close() after usage to free resources on the server!
+		// Note: call server.close() after usage to free resources on the server!
+		//
+		// to reset the database (delete all recors & classes) call 
+		//	  atrix.services.orientdb.dataConnections.m1.resetDb();	
+		// to manually run migrations call:
+		//	  atrix.services.orientdb.dataConnections.m1.migrateUp();	
 		m1: {
 			// type of the db eg. plugin selection
 			type: 'orientdb',

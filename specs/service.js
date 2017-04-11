@@ -80,3 +80,84 @@ const svc3 = new atrix.Service('orientdb3', {
 	},
 });
 atrix.addService(svc3);
+
+const svc4 = new atrix.Service('orientdb4', {
+	dataSource: {
+		m1: {
+			type: 'orientdb',
+			config: {
+				server: {
+					host: '127.0.0.1',
+					port: 2424,
+					username: 'root',
+					password: 'password',
+				},
+				db: {
+					name: 'db4',
+					username: 'root',
+					password: 'password',
+				},
+				migrations: {
+					dir: path.join(__dirname, './test_migrations'),
+					runOnStartup: false,
+				},
+				createDb: true,
+			},
+		},
+	},
+});
+atrix.addService(svc4);
+
+const svc5 = new atrix.Service('orientdb5', {
+	dataSource: {
+		m1: {
+			type: 'orientdb',
+			config: {
+				server: {
+					host: '127.0.0.1',
+					port: 2424,
+					username: 'root',
+					password: 'password',
+				},
+				db: {
+					name: 'db5',
+					username: 'root',
+					password: 'password',
+				},
+				migrations: {
+					dir: path.join(__dirname, './test_migrations'),
+					runOnStartup: true,
+				},
+				createDb: true,
+			},
+		},
+	},
+});
+atrix.addService(svc5);
+
+const svc6 = new atrix.Service('orientdb6', {
+	dataSource: {
+		m1: {
+			type: 'orientdb',
+			config: {
+				server: {
+					host: '127.0.0.1',
+					port: 2424,
+					username: 'root',
+					password: 'password',
+				},
+				db: {
+					name: 'db6',
+					username: 'root',
+					password: 'password',
+				},
+				migrations: {
+					dir: path.join(__dirname, './test_migrations'),
+					runOnStartup: true,
+				},
+				createDb: true,
+			},
+		},
+	},
+});
+atrix.addService(svc6);
