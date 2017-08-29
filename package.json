@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/trigo-at/atrix-orientdb#readme",
   "devDependencies": {
-    "@trigo/atrix": "^0.10.1",
+    "@trigo/atrix": "^0.12.1",
     "@trigo/eslint-config-trigo": "^3.3.0",
     "chai": "^3.5.0",
     "eslint": "^3.19.0",
@@ -40,7 +40,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "joi": "^10.4.1",
-    "orientjs": "^2.2.5",
-    "ramda": "^0.23.0"
+    "orientjs": "^2.2.6",
+    "ramda": "^0.24.1"
   }
 }
