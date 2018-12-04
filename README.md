@@ -7,6 +7,11 @@
 
 Plugin for the atrix mircoservice framework to setup OrientDB connections
 
+## Compatibility
+
+`atrix-orientdb < 1.0.0` works with `atrix < 6.0.0`
+`atrix-orientdb >= 1.0.0` works with `atrix >= 6.0.0`
+
 ## Features
 
 * Connection setup (server & database)
@@ -49,7 +54,9 @@ module.exports = {
 const atrix = require('@trigo/atrix');
 const path = require('path');
 
-const svc = new atrix.Service('orientdb', {
+const svc = atrix.addService({
+	// name of the service
+	name: 'orientdb', 
 	// configure the datasource
 	//
 	// driver can be found here: https://github.com/orientechnologies/orientjs
@@ -111,9 +118,6 @@ const svc = new atrix.Service('orientdb', {
 		},
 	},
 });
-
-// register service with atrix
-atrix.addService(svc);
 
 // start the service
 svc.start();

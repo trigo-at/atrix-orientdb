@@ -5,7 +5,8 @@ const path = require('path');
 
 atrix.configure({ pluginMap: { orientdb: path.join(__dirname, '../') } });
 
-const svc = new atrix.Service('orientdb', {
+atrix.addService({
+	name: 'orientdb',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -30,9 +31,9 @@ const svc = new atrix.Service('orientdb', {
 		},
 	},
 });
-atrix.addService(svc);
 
-const svc2 = new atrix.Service('orientdb2', {
+atrix.addService({
+	name: 'orientdb2',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -57,8 +58,8 @@ const svc2 = new atrix.Service('orientdb2', {
 		},
 	},
 });
-atrix.addService(svc2);
-const svc3 = new atrix.Service('orientdb3', {
+atrix.addService({
+	name: 'orientdb3',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -79,9 +80,9 @@ const svc3 = new atrix.Service('orientdb3', {
 		},
 	},
 });
-atrix.addService(svc3);
 
-const svc4 = new atrix.Service('orientdb4', {
+atrix.addService({
+	name: 'orientdb4',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -106,9 +107,9 @@ const svc4 = new atrix.Service('orientdb4', {
 		},
 	},
 });
-atrix.addService(svc4);
 
-const svc5 = new atrix.Service('orientdb5', {
+atrix.addService({
+	name: 'orientdb5',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -133,9 +134,9 @@ const svc5 = new atrix.Service('orientdb5', {
 		},
 	},
 });
-atrix.addService(svc5);
 
-const svc6 = new atrix.Service('orientdb6', {
+atrix.addService({
+	name: 'orientdb6',
 	dataSource: {
 		m1: {
 			type: 'orientdb',
@@ -160,4 +161,3 @@ const svc6 = new atrix.Service('orientdb6', {
 		},
 	},
 });
-atrix.addService(svc6);
